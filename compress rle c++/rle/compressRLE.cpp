@@ -13,7 +13,7 @@ int main() {
 	fin.open(fileName, ios_base::in);
 	fout.open(compressName, ios_base::out);
 	if (!fin.is_open()) {
-		cout << "Erro ao abrir o arquivo: "<<fileName;
+		cout << "Erro ao abrir o arquivo: "<<fileName<<endl;
 	}
 
 	int freq = 0; char initChar = '0';//frequencia e caractere atual lido do arquivo e
@@ -24,7 +24,7 @@ int main() {
 		return EXIT_SUCCESS;
 	}
 	char aux = '0';
-	while ((fin >> aux, fin.good())) {
+	while ((fin >> aux, !fin.fail())) {
 		//cout << "[" << c << "]" << endl;
 		if (initChar == aux) {//continuar contagem normal, nao mudou padrao
 			++freq;
@@ -43,7 +43,7 @@ int main() {
 
 	fout.close();
 	fin.close();
-	cout << "Compressão realizada com sucesso... Verifique a compactação no arquivo "<<compressName<<endl;
+	cout << "Compressao realizada com sucesso... Verifique a compactacao no arquivo "<<compressName<<endl;
 
 	return EXIT_SUCCESS;
 }
