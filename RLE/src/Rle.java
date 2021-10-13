@@ -12,19 +12,7 @@ public class Rle {
 		Scanner leia = new Scanner(System.in);
 		
 		
-		/*		Testes abaixos
-		 * 
-		 * 
-		String teste = "wwwwaaadexxxxxxywww";
-		ArrayList<Registro> codificacao = codificar(teste);
 		
-		
-		String teste_codificacao = "aabbbccccddddd";
-		String teste_decodificacao = "a2b3c4d5";
-		
-		System.out.println(codificar(teste_codificacao));
-		System.out.println(decodificar(teste_decodificacao));
-		*/
 
 
 		// lendo o caminho do arquivo de entrada
@@ -32,46 +20,15 @@ public class Rle {
 		String caminho = leia.nextLine();
 		String lida = ler_arquivo(caminho);
 		String resultado = "";
-		System.out.println("Digite 1 para codificar e 2 para decodificar");
 		
 		
-		int escolha;
 		
-		
-		// Escolhendo se o usuario quer codificar ou decodificar o texto
-		do {
-			
-			escolha = leia.nextInt();
-		
-			if(escolha == 1)
-			{
+		resultado = decodificar(lida);
 				
-				resultado = codificar(lida);
-				//System.out.println(resultado);
-				
-			}else
-			{
-				
-				if(escolha == 2)
-				{
-					
-					resultado = decodificar(lida);
-					//System.out.println(resultado);
-				
-				}else
-				{
-			
-					System.out.println("Opção inválida, digite novamente");
-				
-				}
-			}
-			
-			
-		}while (escolha != 1 && escolha != 2);
 		
 		
 		System.out.println("Digite o caminho para qual deverá ir ser armazenado o resultado:");
-		leia.nextLine();
+	
 		String escrita = leia.nextLine();
 		
 		escrever_arquivo(escrita, resultado);
@@ -82,7 +39,7 @@ public class Rle {
 	
 	
 	
-	
+	/*
 	public static String codificar(String entrada)
 	{
 		ArrayList<Registro> codificacao = new ArrayList<Registro>();
@@ -174,7 +131,7 @@ public class Rle {
 
 	}
 	
-			
+	*/
 	
 	public static String decodificar(String entrada)
 	{
